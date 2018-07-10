@@ -50,7 +50,7 @@ if [[ ${branch} == MIUI ]]; then
 elif [[ ${CC} == Clang ]]; then
     export ZIPNAME="kat-clang-oreo-$(date +%Y%m%d-%H%M).zip"
 else
-    export ZIPNAME="kat-combo-oreo-$(date +%Y%m%d-%H%M).zip"
+    export ZIPNAME="SK-mido-oreo-$(date +%Y%m%d-%H%M).zip"
 fi
 
 # Final Zip
@@ -87,7 +87,7 @@ fi
 
 # Relatable
 colorize "${CYAN}"
-${MAKE} $DEFCONFIG
+${MAKE} strakz_defconfig
 decolorize
 
 START=$(date +"%s")
