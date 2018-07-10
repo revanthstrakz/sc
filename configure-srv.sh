@@ -5,7 +5,7 @@
 source "${HOME}/scripts/env"
 
 # Export Kernel Directory
-export KERNELDIR=${HOME}/weeb_kernel_msm8953
+export KERNELDIR=${HOME}/MiDo.
 
 # Some alias
 function clone() {
