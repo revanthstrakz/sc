@@ -170,17 +170,11 @@ cd ${ANYKERNEL}
 cd - >> /dev/null
 
 # Finalize the zip down
-if [ -f "$FINAL_ZIP" ]; then
-if [[ ${WORKER} == semaphore ]]; then
-    header "Uploading ${ZIPNAME} to Dropbox" "${LIGHTGREEN}"
-    transfer "${FINAL_ZIP}"
-    push
-fi
-    header "${ZIPNAME} can be found at ${FINAL_ZIP}" "${LIGHTGREEN}"
-    fin
-# Oh no
+
+
+echo -e "$ZIPNAME zip can be found at $FINAL_ZIP";
+echo -e "Uploading ${ZIPNAME} to https://transfer.sh/";
+transfer "${FINAL_ZIP}";
 else
-    header "Zip Creation Failed =("
-    die "My works took $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) seconds\nbut it's error..."
-    finerr
-fi
+echo -e "Zip Creation Failed =(";
+fi # FINAL_ZIP check 
