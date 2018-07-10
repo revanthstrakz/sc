@@ -104,7 +104,8 @@ export SUBARCH="arm64"
 
 # Identifier
 if [[ ${WORKER} == semaphore ]]; then
-  export KBUILD_BUILD_USER="raphielscape"
+  export KBUILD_BUILD_USER="ReVaNtH_StRaKz"
+  export KBUILD_BUILD_HOST="PaNdA_MiSSiOn"
 fi
 
 # Where's my damn Toolchain if it's Semaphore?
@@ -113,7 +114,7 @@ if [[ ${WORKER} == semaphore ]]; then
 fi
 
 # Wot is my defconfig?
-export DEFCONFIG="raph_defconfig"
+export DEFCONFIG="strakz_defconfig"
 
 # Where will the zip go?
 if [[ ${WORKER} == semaphore ]]; then
