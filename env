@@ -88,7 +88,7 @@ fi
 if [[ ${WORKER} == raphielbox ]]; then
     export ANYKERNEL="${WORKDIR}/AnyKernel2"
 else
-    export ANYKERNEL="${KERNELDIR}/chewy/aroma/anykernel"
+    export ANYKERNEL="${KERNELDIR}/SK/aroma/anykernel"
 fi
 
 # Modules boi
