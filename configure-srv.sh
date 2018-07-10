@@ -20,7 +20,7 @@ if [[ ${WORKER} == semaphore ]]; then
 fi
 
 # Clone needed components
-clone https://github.com/raphielscape/AnyKernel2.git ${KERNELDIR}/chewy/aroma/anykernel
+clone https://github.com/revanthstrakz/ak2.git ${KERNELDIR}/SK/aroma/anykernel
 clone https://github.com/krasCGQ/aarch64-linux-android.git --branch "opt-linaro-7.x" ${TOOLCHAIN}
 # clone https://github.com/kenny3fcb/aarch64-linux-gnu.git ${TOOLCHAIN}
 
