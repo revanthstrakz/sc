@@ -297,3 +297,10 @@ function copy() {
 function delett() {
   command rm -vrf "${@}"
 }
+function transfer() {
+
+zipname="$(echo $1 | awk -F '/' '{print $NF}')";
+url="$(curl -# -T $1 https://transfer.sh)";
+printf '\n';
+echo -e "Download $zipname at $url";
+}
