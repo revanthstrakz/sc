@@ -87,15 +87,15 @@ fi
 
 # Relatable
 colorize "${CYAN}"
-${MAKE} strakz_defconfig
+${MAKE} CC=clang strakz_defconfig
 decolorize
 
 START=$(date +"%s")
 header "Using ${JOBS} threads to compile" "${LIGHTCYAN}"
 
 colorize ${LIGHTRED}
-${MAKE} -j${JOBS}
-${MAKE} -j${JOBS} dtbs
+${MAKE} CC=clang -j${JOBS}
+${MAKE} CC=clang -j${JOBS} dtbs
 decolorize
 
 exitCode="$?"
