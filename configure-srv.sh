@@ -22,8 +22,8 @@ fi
 # Clone needed components
 clone https://github.com/revanthstrakz/ak2.git ${KERNELDIR}/SK/aroma/anykernel
 clone https://github.com/krasCGQ/aarch64-linux-android.git --branch "opt-linaro-7.x" ${TOOLCHAIN}
-clone https://github.com/Adesh15/platform_prebuilts_clang_host_linux-x86.git ~/clang
-# clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 ~/gcc-4.9
+clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86.git ~/clang
+# clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 ~${TOOLCHAIN}
 # clone https://github.com/kenny3fcb/aarch64-linux-gnu.git ${TOOLCHAIN}
 
 # Going to start
