@@ -9,7 +9,7 @@ export KERNELDIR=${HOME}/MiDo.
 
 # Some alias
 function clone() {
-  command git clone --depth 1 "${@}"
+  command git clone --depth 50 "${@}"
 }
 
 # Validate things for proper configurations
