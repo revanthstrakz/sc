@@ -88,13 +88,13 @@ fi
 # Relatable
 colorize "${CYAN}"
 
-export CLANG_PATH=~/clang/clang-r328903/bin
-export PATH=${CLANG_PATH}:${PATH}
-export CLANG_TRIPLE=aarch64-linux-gnu-
-export TCHAIN_PATH="${TOOLCHAIN}/bin/aarch64-opt-linux-android-"
-export CROSS_COMPILE="${CCACHE} ${TCHAIN_PATH}"
-export CLANG_TCHAIN="~/clang/clang-r328903/bin/clang"
-export KBUILD_COMPILER_STRING="$(${CLANG_TCHAIN} --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')"
+#export CLANG_PATH=~/clang/clang-r328903/bin
+#export PATH=${CLANG_PATH}:${PATH}
+#export CLANG_TRIPLE=aarch64-linux-gnu-
+#export TCHAIN_PATH="${TOOLCHAIN}/bin/aarch64-opt-linux-android-"
+#export CROSS_COMPILE="${CCACHE} ${TCHAIN_PATH}"
+#export CLANG_TCHAIN="~/clang/clang-r328903/bin/clang"
+#export KBUILD_COMPILER_STRING="$(${CLANG_TCHAIN} --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')"
 
 
 ${MAKE} CC=clang strakz_defconfig
@@ -104,8 +104,10 @@ START=$(date +"%s")
 header "Using ${JOBS} threads to compile" "${LIGHTCYAN}"
 
 colorize ${LIGHTRED}
-${MAKE} CC=clang -j${JOBS}
-${MAKE} CC=clang -j${JOBS} dtbs
+#${MAKE} CC=clang -j${JOBS}
+#${MAKE} CC=clang -j${JOBS} dtbs
+${MAKE} -j${JOBS}
+${MAKE} -j${JOBS} dtbs
 decolorize
 
 exitCode="$?"
