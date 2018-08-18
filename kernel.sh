@@ -85,7 +85,7 @@ colorize "${CYAN}"
 #export KBUILD_COMPILER_STRING="$(${CLANG_TCHAIN} --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')"
 
 
-${MAKE} strakz_defconfig
+${MAKE} mido_defconfig
 decolorize
 
 START=$(date +"%s")
