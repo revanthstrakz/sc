@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # Init da wae
+WORKER=semaphore
 if [[ ${WORKER} == semaphore ]]; then
     source "${HOME}/scripts/env"
 else
