@@ -7,7 +7,7 @@ WORKER=semaphore
 
     source "${HOME}/scripts/env"
 
-    source "${HOME}/working/scripts/env"
+   
 
 
 
