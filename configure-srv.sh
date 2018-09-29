@@ -5,7 +5,7 @@
 source "${HOME}/scripts/env"
 
 # Export Kernel Directory
-export KERNELDIR=${HOME}/kat_kernel_reworks
+export KERNELDIR=${HOME}/eas
 
 # Some alias
 function clone() {
