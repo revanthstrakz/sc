@@ -5,7 +5,7 @@
 source "${HOME}/scripts/env"
 
 # Export Kernel Directory
-export KERNELDIR=${HOME}/eas
+export KERNELDIR=${HOME}/MiDo.
 
 # Some alias
 function clone() {
