@@ -6,7 +6,7 @@ source "${HOME}/scripts/env"
 
 # Export Kernel Directory
 export KERNELDIR=${HOME}/eas
-
+export WORKER=semaphore
 # Some alias
 function clone() {
   command git clone --depth 50 "${@}"
