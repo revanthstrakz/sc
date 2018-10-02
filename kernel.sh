@@ -96,7 +96,7 @@ colorize "${CYAN}"
 #export CLANG_TCHAIN="~/clang/clang-r328903/bin/clang"
 #export KBUILD_COMPILER_STRING="$(${CLANG_TCHAIN} --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')"
 
-
+export SUBARCH=arm64
 ${MAKE} strakz_defconfig
 decolorize
 
