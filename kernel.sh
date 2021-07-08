@@ -3,28 +3,16 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # Init da wae
-if [[ ${WORKER} == semaphore ]]; then
+WORKER=semaphore
+
     source "${HOME}/scripts/env"
-else
-    source "${HOME}/working/scripts/env"
-fi
 
-# First-post works
-tg_sendstick
-tg_sendinfo "${MSG} started on $(whoami)~"
-tg_channelcast "${MSG} started on $(whoami)~"
+   
 
-# Whenever build is errored, report it, and killplay
-trap '{
-    STATUS=${?}
-    tg_senderror
-    finerr
-}' ERR
 
-# When the worker is Semaphore
-if [[ ${WORKER} == semaphore ]]; then
+
     check_gcc_toolchain
-fi
+
 
 # Set Kerneldir Plox
 if [[ -z ${KERNELDIR} ]]; then
@@ -63,9 +51,9 @@ colorize "${RED}"
 decolorize
 
 # Link out directory to cache directory as per Semaphore documentation
-if [[ ${WORKER} == semaphore ]]; then
+
   ln -s ${SEMAPHORE_CACHE_DIR}/out ${KERNELDIR}/out
-fi
+
 
 # Here we go
 cd "${SRCDIR}"
@@ -97,7 +85,7 @@ colorize "${CYAN}"
 #export KBUILD_COMPILER_STRING="$(${CLANG_TCHAIN} --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')"
 
 
-${MAKE} strakz_defconfig
+${MAKE} mido_defconfig
 decolorize
 
 START=$(date +"%s")
@@ -118,23 +106,15 @@ DIFF=$(($END - $START))
 # AnyKernel cleanups
 header "Bringing-up AnyKernel~"
 colorize ${YELLOW}
-  if [[ ${WORKER} == raphielbox ]]; then
-    delett ${ANYKERNEL}
-      copy "${WORKDIR}/AnyKernel2-git" "${ANYKERNEL}"
-        cd ${ANYKERNEL} >> /dev/null
-          delett -v zImage
-          delett ".git"
-        cd ${ANYKERNEL}/patch >> /dev/null
-          delett *
-        cd - >> /dev/null
-  else
+
+
     cd ${ANYKERNEL} >> /dev/null
       delett zImage
       delett ".git"
     cd ${ANYKERNEL}/patch >> /dev/null
       delett *
     cd - >> /dev/null
-  fi
+  
 decolorize
 
 # Copy the image to AnyKernel
